@@ -1,0 +1,16 @@
+name: Operacao
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  continuidade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Continuidade das tarefas em worktrees reais
+        run: python3 -m unittest discover -s tests -v
+      - name: Espacos e conflitos no diff
+        run: git show --format= --check HEAD
