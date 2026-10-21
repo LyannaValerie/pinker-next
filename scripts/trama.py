@@ -20,13 +20,13 @@ def regions(root):
         if folder.is_symlink():
             raise ValueError(f"Raiz simbólica não aceita: {folder}")
         for path in sorted(folder.rglob("*")):
-            if path.suffix not in (".py", ".rs", ".c", ".h") or not path.is_file():
+            if path.suffix not in (".pink", ".py", ".rs", ".c", ".h") or not path.is_file():
                 continue
             if path.is_symlink() or any(p.is_symlink() for p in path.parents if p != root):
                 raise ValueError(f"Fonte simbólica não aceita: {path}")
             text = path.read_text(encoding="utf-8")
             lines = text.splitlines(keepends=True)
-            # Python: somente comentários reais. Rust/C: marcador de linha literal
+            # Python: somente comentários reais. Pinker/Rust/C: marcador de linha literal
             # reservado; não é um lexer dessas linguagens nem resolve símbolos.
             python_comments = None
             if path.suffix == ".py":

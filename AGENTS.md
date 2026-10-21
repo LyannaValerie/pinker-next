@@ -23,16 +23,19 @@ FORMAT
     prosa curta = contexto que os campos não explicam
 
 IMPLEMENTATION_LANGUAGES
-    Rust = estrutura e integração da Pinker
-    C = baixo nível e interfaces de máquina/ABI quando necessários
-    Python = ferramental e automação
-    papéis são preferências; combinações exigem problema concreto e contrato
+    Pinker estática = linguagem de implementação do núcleo dinâmico da Next
+    frontend/representação/execução Next = fontes .pink
+    Python = ferramental e automação existentes
+    Rust/C = infraestrutura ou fronteiras justificadas; não um motor Next paralelo
+    a Pinker original mantém seu compilador; não exigir self-hosting para começar
     sem bibliotecas/pacotes externos, inclusive desenvolvimento e testes
     bibliotecas padrão e ferramentas do ambiente declaradas são permitidas
-    usar releases estáveis mantidas e patches atuais; registrar versões reais
-    C/unsafe/FFI exigem limites explícitos de memória, tipos e erros
+    usar releases estáveis mantidas; registrar versões reais
+    baseline do compilador Pinker = fixar por commit após prova do bootstrap
+    não atualizar a toolchain da v0 por referências históricas deste repositório
     política canônica = docs/linguagens.pot
-    referências de toolchain = toolchains.json e .python-version
+    percurso e limites = docs/bootstrap-next.pot
+    referências de ambiente = toolchains.json e .python-version
 
 CONTINUE
     ler issue, último checkpoint e Git observado

@@ -1,0 +1,64 @@
+DECISION
+    AUTHOR = Mente / Codex, sob pedido da Founder
+    AUTHORITY = Founder, 2026-10-21
+    PINKER = linguagem estática que continua sua campanha
+    NEXT = linguagem dinâmica implementada em Pinker
+    LANGUAGE_IMPLEMENTATION = ainda não iniciada
+    CODE_MIGRATION_FROM_V0 = não é a estratégia padrão para o núcleo Next
+    MERGE = Founder
+
+BOOTSTRAP
+    B0 = compilador Pinker existente e executável no host
+    B1 = fontes .pink que implementam a Next
+    B2 = executar B1 com Pinker ou construir seu executável nativo no alvo suportado
+    B3 = B1 processa e executa programas escritos na linguagem Next
+    bootstrap cannot require Next to exist before B1
+    compiler Pinker written in Pinker = not required
+    Next written in Next = not required or claimed
+    native B1 executable != native compilation of B3 programs
+    record compiler commit, build mode, runtime/ABI, host tools and commands
+    baseline selection = evidence from real bootstrap, not a copied version label
+
+DYNAMIC_CONTRACT_REQUIRED
+    values and runtime representation
+    arithmetic/ranges/overflow and explicit or implicit conversions
+    equality and condition semantics
+    scopes, binding/rebinding and calls/returns
+    collections and memory ownership/lifetime/reclamation
+    runtime type errors with original source location
+    input/output and host effects
+    syntax and its relation to the Pinker #631 direction
+    implementation choices must be explicit before the affected feature is delivered
+
+EVIDENCE_FIRST_SLICE
+    choose a small complete set of useful Next programs and expected failures
+    map only needed Pinker facilities: text/input, tagged values, collections, calls and resources
+    matrix = Next obligation / Pinker source / minimal check / actual gap / bounded repair
+    do not assume all facilities exist from documentation alone
+    do not add Pinker features solely for hypothetical future Next use
+    deliver parsing + real representation + execution + diagnostics + examples + instructions
+    expose implemented educational stages, not fabricated intermediate output
+    validate every execution mode claimed; honor required native parity
+    prototype/stub = investigation evidence only, not completed feature
+
+EDUCATIONAL_HORIZON
+    objective = own path inspired by Nand2Tetris, using both Pinkers
+    progression = logic/circuits -> architecture -> assembly -> VM -> languages -> system
+    proposed Pinker role = typed system/tool components and Next implementation
+    proposed Next role = dynamic experimentation and programs in the educational environment
+    each stage = representation, invariant, runnable artifact and observable evidence
+    simulator/ISA/VM/OS design = not selected here
+    SO or bare-metal support = not implemented by this decision
+
+FUTURE_SO
+    Founder vision = recreate/host an implementation of Next inside the future system
+    current Pinker native target = Linux x86-64 SysV, not proof of portability to that SO
+    identify boot, ABI, memory, I/O and runtime services when a port becomes concrete
+    separate Next semantics from host services to assess reuse before rewriting
+    no immediate kernel, driver, hardware simulator or self-hosting campaign
+
+ORDER
+    continue Pinker campaign #768; #631 proceeds according to its authority
+    new Next direction does not reorder pending Pinker Tasks automatically
+    record bounded Tasks only when there is a concrete independent deliverable
+    no requirement to close all historical debts before every useful language delivery
