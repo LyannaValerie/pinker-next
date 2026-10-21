@@ -1,20 +1,28 @@
 IMPLEMENTATION_POLICY
-    AUTHORITY = Founder, conversa de 2026-10-20
-    LANGUAGES = Rust + C + Python
-    APPLIES_TO = compiler/runtime/tools/tests/build-support
+    AUTHORITY = Founder, decisão de 2026-10-21
+    NEXT_CORE_LANGUAGE = Pinker
+    NEXT_LANGUAGE_TYPING = dynamic
+    PINKER_LANGUAGE_TYPING = static
+    SUPPORT_LANGUAGES = Python; Rust/C only for justified infrastructure/boundaries
+    APPLIES_TO = Next frontend/representations/execution/tools/tests/build-support
     CANONICAL_VERSION_REFERENCES = toolchains.json + .python-version
+    BOOTSTRAP_CONTRACT = docs/bootstrap-next.pot
 
 PREFERRED_RESPONSIBILITIES
-    Rust = estrutura, frontend, representações, validação, integração e execução
-    C = baixo nível, ABI, interação com máquina/runtime quando trouxer benefício
+    Pinker = frontend, representações e execução da linguagem Next
     Python = ferramentas, geração, análise de dados e automação
-    responsibilities = FLEXIBLE_NOT_EXCLUSIVE
-    choose language from concrete problem, evidence, boundary cost and maintenance
+    Rust = estrutura existente da Pinker e infraestrutura quando necessária
+    C = baixo nível e ABI quando houver necessidade demonstrada
+    responsibilities of support languages = FLEXIBLE_NOT_EXCLUSIVE
+    support flexibility does not authorize replacing the Next core with Rust/C/Python
+    choose support from concrete problem, evidence, boundary cost and maintenance
     no duplicate implementation solely to occupy a language
-    no requirement to use all three in every feature
+    no requirement to use all support languages in every feature
     changing a component's language must preserve its accepted semantic contract
 
 COMPOSITION
+    Pinker builds/runs the Next implementation; Next executes programs in its own language
+    Pinker implementation compiled to native != Next programs compiled to native
     Rust + C may combine through a documented C ABI
     Python may orchestrate programs through explicit arguments and exit/result contracts
     Python-generated sources must be deterministic and inspectable when generation is used
@@ -23,12 +31,13 @@ COMPOSITION
     Bash launchers remain thin environment glue, not a fourth product implementation core
 
 DEPENDENCIES
+    third-party Pinker libraries/packages = FORBIDDEN
     third-party Rust crates = FORBIDDEN
     third-party Python packages = FORBIDDEN
     third-party C libraries = FORBIDDEN
     development/test/build language packages = SAME_RULE
     vendoring third-party code to evade this rule = FORBIDDEN
-    own repository modules and own workspace crates = ALLOWED
+    own Pinker modules, repository modules and own workspace crates = ALLOWED
     standard language libraries = ALLOWED
     host compiler/interpreter/linker/assembler/Git/shell = DECLARED_ENVIRONMENT_TOOLS
     OS APIs and platform standard C library = DECLARE_WHEN_USED
@@ -52,6 +61,11 @@ VERSIONS
     version number alone does not prove absence of vulnerabilities
 
 REFERENCE_SELECTION
+    Pinker compiler commit/toolchain = UNSELECTED until real bootstrap proof
+    observed v0 commit = 9146fee66b9c63d8841b9ac60a64032b41fd11a7
+    observed != validated bootstrap baseline
+    Rust/C entries below = historical infrastructure references from 2026-10-20
+    Rust/C references do not upgrade v0 or become mandatory Next core dependencies
     Rust = 1.99.1 stable corrective release
     C = ISO C23 with GCC 16.2 corrective release as reference compiler
     Python = CPython 3.14.8 maintenance/security release
@@ -86,12 +100,14 @@ EVIDENCE
     Trama remains code location only, without a dedicated test suite
 
 LIMIT
-    three languages expand implementation choices
-    three languages do not prove completeness, memory safety or absence of gaps
+    support languages expand implementation choices
+    their availability does not prove completeness, memory safety or absence of gaps
     fewer gaps require explicit ownership, integration and observable behavior
 
 CURRENT_STATE
     Python tooling = IMPLEMENTED
-    Rust compiler/core = NOT_IMPORTED
-    C components = NOT_IMPLEMENTED
+    Next core in Pinker = NOT_IMPLEMENTED
+    Pinker bootstrap = NOT_VALIDATED
+    Rust/C Next core = NOT_PLANNED_AS_DEFAULT
+    C support components = NOT_IMPLEMENTED
     foreign-function interfaces = NOT_IMPLEMENTED

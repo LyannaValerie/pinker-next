@@ -1,13 +1,13 @@
 {
   "schema": "pinker.toolchains/1",
-  "decision_date": "2026-10-20",
+  "decision_date": "2026-10-21",
   "selection": "maintained_stable_releases_with_current_patches",
   "security_guarantee": "none_from_version_alone",
   "external_language_packages": false,
   "rust": {
     "version": "1.99.1",
     "channel": "stable",
-    "adoption": "reference_not_yet_compiled_in_pinker_next",
+    "adoption": "historical_infrastructure_reference_not_next_core_requirement",
     "source": "https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/"
   },
   "c": {
@@ -15,7 +15,7 @@
     "flag": "-std=c23",
     "reference_compiler": "GCC",
     "reference_release": "16.2",
-    "adoption": "reference_no_c_component_yet",
+    "adoption": "historical_infrastructure_reference_no_component",
     "sources": [
       "https://gcc.gnu.org/gcc-16/",
       "https://gcc.gnu.org/projects/c-status.html"
@@ -32,5 +32,13 @@
     "choice_reason": "maintained_3_14_series_with_security_maintenance_release",
     "newer_stable_observed": "3.15.0",
     "newer_series_adoption": "validate_before_changing_reference"
+  },
+  "pinker": {
+    "role": "implementation_language_for_dynamic_next",
+    "typing": "static",
+    "repository": "https://github.com/LyannaValerie/pinker-v0",
+    "observed_commit": "9146fee66b9c63d8841b9ac60a64032b41fd11a7",
+    "validated_bootstrap_commit": null,
+    "adoption": "direction_only_bootstrap_not_validated"
   }
 }

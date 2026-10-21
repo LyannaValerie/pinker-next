@@ -1,44 +1,61 @@
-REBOOT
-    AUTHORITY = Founder, conversa de 2026-10-20
+DIRECTION
+    AUTHORITY = Founder, conversa de 2026-10-21; preserva decisões compatíveis de 20/10
     DIRECTION_ISSUE = https://github.com/LyannaValerie/pinker-next/issues/1
-    LEGACY_REPO = https://github.com/LyannaValerie/pinker-v0
-    LEGACY_COMMIT = 9146fee66b9c63d8841b9ac60a64032b41fd11a7
+    PINKER_REPO = https://github.com/LyannaValerie/pinker-v0
+    PINKER_REFERENCE_OBSERVED = 9146fee66b9c63d8841b9ac60a64032b41fd11a7
+    CURRENT_PINKER_CAMPAIGN = pinker-v0#768 / continuidade preservada
     LANGUAGE_REFERENCE = pinker-v0#631 + comentários
+    FREEZE_2026_10_13 = revogado pela Founder; estado administrativo deve ser observado
 
 PRESERVE
     EDUCATIONAL_PIPELINE = REQUIRED
     REAL_STAGE_OBSERVABILITY = REQUIRED
     TRAMA_CODE_LOCATION_FROM_START = REQUIRED
-    TRAMA_TEST_SUITE = NONE_BY_FOUNDER_DIRECTION
+    NEXT_TRAMA_TEST_SUITE = NONE_BY_FOUNDER_DIRECTION
     ISSUE_MOTHER_CHILD_GRANDCHILD_MODEL = REQUIRED
     GUIDE_HISTORY_AND_EXECUTOR_HISTORIES = REQUIRED
     TASK_CONTINUITY_ACROSS_EXECUTORS = REQUIRED
     POT_LPT_JSON_JSONL = PRIMARY_AGENT_FORMATS
 
 PRODUCT_DIRECTION
-    source-visible vocabulary = English
+    Pinker = statically typed / existing compiler and runtime retained
+    Pinker Next = dynamically typed / implemented in Pinker
+    Next core sources = .pink
+    Next source-visible vocabulary = English direction retained
     project/documentation/diagnostic prose = Portuguese unless separately decided
     indentation = design direction; remaining grammar choices explicit
     formatter width != grammar width
     lexical rename != semantic redesign
-    interpretation/native comparison = preserve in supported shared subset
-    tokens/AST/IR/CFG/selection/machine/assembly = inspectable real stages when imported
+    Pinker #631 does not turn Pinker into a dynamically typed language
+    educational stages = expose real implemented representations, never simulated output
+    native/interpreter obligations = preserve the explicitly supported shared scope
 
-INITIAL_IMPLEMENTATION
-    compiler/runtime = NOT_IMPORTED
+CURRENT_IMPLEMENTATION
+    Next frontend/dynamic runtime = NOT_IMPLEMENTED
+    bootstrap with Pinker = NOT_VALIDATED
     slots/checkpoints/handoff = operational CLI, see docs/operacao.md
-    Trama = literal region locator, not full legacy implementation
+    Trama = literal region locator for .pink/.py/.rs/.c/.h
     old Forja code = NOT_AVAILABLE / NOT_COPIED
     scripts implementation = Python stdlib + Bash launchers + Git
-    implementation languages = Rust + C + Python, conforme docs/linguagens.pot
-    compiler structure = Rust direction preserved
-    C low-level components = NOT_IMPLEMENTED
+    Rust/C Next core rewrite = superseded direction
+    implementation policy = docs/linguagens.pot
+    bootstrap and future system = docs/bootstrap-next.pot
 
 NEXT_LANGUAGE_STEP
-    choose representative programs in the desired syntax
-    map only necessary dependencies in the legacy pipeline
-    classify components REUSE / ADAPT / REPLACE with evidence
-    deliver a complete educational execution path with honest supported scope
+    fix representative programs and runtime errors for the dynamic language
+    inspect only Pinker capabilities required by that complete slice
+    record obligation / source / smallest proof / actual gap
+    use an existing executable Pinker compiler; record accepted commit/toolchain
+    implement Next in Pinker, without requiring either language to self-host first
+    deliver source input, real stages, execution, diagnostics, example and documented limits
+    do not claim compiling a Next interpreter makes Next programs native
+
+CI_SCOPE
+    v0 = Founder direction to retain Trama tests locally/versioned, outside default remote suite
+    v0 implementation = separate bounded work under existing campaign
+    Next operational CI = unchanged by this direction update
+    Next Trama dedicated test suite = remains absent
+    changed workflow policy != already implemented performance gain
 
 IDENTITIES
     Engine = implementation and factual evidence
@@ -47,6 +64,7 @@ IDENTITIES
     future vision = proposal, never asserted as implemented
 
 NON_AUTOMATIC_INHERITANCE
-    old campaigns and debts do not authorize new work
-    old absolute paths and executor names are not new host requirements
-    no mandatory framework/MCP/universal Guardian before language work
+    #768 continuation does not reopen completed issues or start #631 automatically
+    historical absolute paths and executor names are not new host requirements
+    no framework/MCP/universal Guardian before concrete language work
+    no speculative SO/simulator campaign or compulsory full audit as bootstrap prerequisite

@@ -131,11 +131,11 @@ literal por chave/caminho, sem ranking semântico. Cada chamada lê o presente,
 sem arquivo de índice persistente. Retornos: `0` encontrado, `4` vazio,
 `1` fonte inválida, `2` uso inválido. Vazio não prova inexistência de código.
 
-Raízes limitadas a `src/`, `runtime/`, `scripts/`, arquivos `.rs`, `.c`, `.h` e `.py`.
+Raízes limitadas a `src/`, `runtime/`, `scripts/`, arquivos `.pink`, `.rs`, `.c`, `.h` e `.py`.
 Marque regiões com `# @pinker-nav:start chave` / `end chave` em Python e `//`
-em Rust/C. Python reconhece comentários pelo tokenizador da biblioteca padrão.
-Rust/C usam marcadores de linha literais reservados: não coloque linhas com essa
+em Pinker/Rust/C. Python reconhece comentários pelo tokenizador da biblioteca padrão.
+Pinker/Rust/C usam marcadores de linha literais reservados: não coloque linhas com essa
 forma dentro de strings ou comentários de bloco. Não se alega análise léxica
-completa de Rust/C nem resolução semântica de símbolos. Chaves duplicadas,
+completa de Pinker/Rust/C nem resolução semântica de símbolos. Chaves duplicadas,
 aninhamento e marcadores sem par são erros. Não há cobertura obrigatória,
 navegação documental, mapeamento de testes ou suíte dedicada à Trama.
