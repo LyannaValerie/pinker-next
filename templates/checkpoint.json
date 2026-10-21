@@ -1,0 +1,11 @@
+{
+  "schema": "pinker.checkpoint/1",
+  "completed": [],
+  "partial": [],
+  "pending": [],
+  "next_actions": ["Ler o contrato da tarefa e confrontar com o estado observado"],
+  "decisions": [],
+  "checks": [],
+  "pending_effects": [],
+  "continuation_notes": "Preencher fatos da tarefa antes de registrar. Nunca incluir credenciais."
+}

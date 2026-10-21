@@ -1,0 +1,52 @@
+REBOOT
+    AUTHORITY = Founder, conversa de 2026-10-20
+    DIRECTION_ISSUE = https://github.com/LyannaValerie/pinker-next/issues/1
+    LEGACY_REPO = https://github.com/LyannaValerie/pinker-v0
+    LEGACY_COMMIT = 9146fee66b9c63d8841b9ac60a64032b41fd11a7
+    LANGUAGE_REFERENCE = pinker-v0#631 + comentários
+
+PRESERVE
+    EDUCATIONAL_PIPELINE = REQUIRED
+    REAL_STAGE_OBSERVABILITY = REQUIRED
+    TRAMA_CODE_LOCATION_FROM_START = REQUIRED
+    TRAMA_TEST_SUITE = NONE_BY_FOUNDER_DIRECTION
+    ISSUE_MOTHER_CHILD_GRANDCHILD_MODEL = REQUIRED
+    GUIDE_HISTORY_AND_EXECUTOR_HISTORIES = REQUIRED
+    TASK_CONTINUITY_ACROSS_EXECUTORS = REQUIRED
+    POT_LPT_JSON_JSONL = PRIMARY_AGENT_FORMATS
+
+PRODUCT_DIRECTION
+    source-visible vocabulary = English
+    project/documentation/diagnostic prose = Portuguese unless separately decided
+    indentation = design direction; remaining grammar choices explicit
+    formatter width != grammar width
+    lexical rename != semantic redesign
+    interpretation/native comparison = preserve in supported shared subset
+    tokens/AST/IR/CFG/selection/machine/assembly = inspectable real stages when imported
+
+INITIAL_IMPLEMENTATION
+    compiler/runtime = NOT_IMPORTED
+    slots/checkpoints/handoff = operational CLI, see docs/operacao.md
+    Trama = literal region locator, not full legacy implementation
+    old Forja code = NOT_AVAILABLE / NOT_COPIED
+    scripts implementation = Python stdlib + Bash launchers + Git
+    implementation languages = Rust + C + Python, conforme docs/linguagens.pot
+    compiler structure = Rust direction preserved
+    C low-level components = NOT_IMPLEMENTED
+
+NEXT_LANGUAGE_STEP
+    choose representative programs in the desired syntax
+    map only necessary dependencies in the legacy pipeline
+    classify components REUSE / ADAPT / REPLACE with evidence
+    deliver a complete educational execution path with honest supported scope
+
+IDENTITIES
+    Engine = implementation and factual evidence
+    Rosa = identity, language direction and aesthetic judgment
+    Guardião = deterministic contract verification when concretely needed
+    future vision = proposal, never asserted as implemented
+
+NON_AUTOMATIC_INHERITANCE
+    old campaigns and debts do not authorize new work
+    old absolute paths and executor names are not new host requirements
+    no mandatory framework/MCP/universal Guardian before language work

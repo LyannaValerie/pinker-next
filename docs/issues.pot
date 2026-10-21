@@ -1,0 +1,42 @@
+ISSUES
+    REBOOT_MOTHER = #1
+    GUIDE_HISTORY = #2
+    FIRST_TASK = #3
+    BOOTSTRAP_EXECUTOR_HISTORY = #4
+    FIRST_TASK_PARENT = #1
+
+TOPOLOGY
+    mother = goal and accepted scope
+    child = independently finishable delivery
+    grandchild = concrete subdivision only when needed
+    Task declares PARENT and mother lists children
+    native GitHub sub-issue link = use when available, report when absent
+    current #3 -> #1 = explicit textual relationship, native link not established
+    histories = independent records, not executable Tasks or children by implication
+
+GUIDE
+    keeps decisions and factual chronology in #2
+    creates Task contract from templates/task.pot
+    identifies scope and evidence; does not duplicate shell documentation in prompts
+    chooses executors by availability/capability, without permanent preference
+    records accepted/rejected/deferred findings with reason
+
+EXECUTOR
+    has own history issue, created when first participating
+    records Task/HEAD/completed/validation/limitations/next
+    successor references previous executor history and continues same Task
+    local checkpoint carries operational detail; GitHub carries public summary
+    no secrets, raw credentials or private provider state in either
+
+DECISION
+    TYPE = <ACCEPT | REJECT | DEFER | REQUEST_CHANGE>
+    TASK = <issue>
+    HEAD = <sha-or-NOT_APPLICABLE>
+    EVIDENCE = <links>
+    REASON = <concise-explanation>
+    NEXT = <bounded-action>
+
+LIMITS
+    no new child merely to repeat status
+    no mandatory cleaning of every historical issue before product progress
+    no merge/release/destructive cleanup without specific authorization

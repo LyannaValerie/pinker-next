@@ -1,0 +1,28 @@
+TASK
+    ID = <identificador-estavel>
+    ISSUE = <URL>
+    PARENT = <URL-ou-NONE>
+    EXECUTOR = <identidade-atual-ou-UNASSIGNED>
+GOAL
+    <resultado-utilizavel>
+SCOPE
+    <superficies-autorizadas>
+INVARIANTS
+    <comportamentos-que-devem-ser-preservados>
+DELIVER
+    <codigo-exemplos-documentacao-aplicaveis>
+VALIDATE
+    <observacoes-que-demonstram-o-resultado>
+STOP
+    <condicoes-materiais-que-exigem-decisao>
+CONTINUITY
+    SAME_TASK_ON_EXECUTOR_CHANGE = TRUE
+    CHECKPOINT = <ultimo-registro-no-slot>
+    REOBSERVE_GIT_AND_PENDING_EFFECTS = REQUIRED
+RETURN
+    HEAD = <sha>
+    COMPLETED = <itens>
+    VALIDATION = <resultado-e-evidencias>
+    LIMITATIONS = <lacunas>
+    NEXT = <proxima-acao>
+    MERGE = FOUNDER_ONLY
