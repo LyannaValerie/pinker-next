@@ -1,0 +1,36 @@
+{
+  "schema": "pinker.toolchains/1",
+  "decision_date": "2026-10-20",
+  "selection": "maintained_stable_releases_with_current_patches",
+  "security_guarantee": "none_from_version_alone",
+  "external_language_packages": false,
+  "rust": {
+    "version": "1.99.1",
+    "channel": "stable",
+    "adoption": "reference_not_yet_compiled_in_pinker_next",
+    "source": "https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/"
+  },
+  "c": {
+    "standard": "C23",
+    "flag": "-std=c23",
+    "reference_compiler": "GCC",
+    "reference_release": "16.2",
+    "adoption": "reference_no_c_component_yet",
+    "sources": [
+      "https://gcc.gnu.org/gcc-16/",
+      "https://gcc.gnu.org/projects/c-status.html"
+    ]
+  },
+  "python": {
+    "implementation": "CPython",
+    "version_file": ".python-version",
+    "adoption": "operational_tooling_and_ci",
+    "sources": [
+      "https://www.python.org/downloads/release/python-3148/",
+      "https://devguide.python.org/versions/"
+    ],
+    "choice_reason": "maintained_3_14_series_with_security_maintenance_release",
+    "newer_stable_observed": "3.15.0",
+    "newer_series_adoption": "validate_before_changing_reference"
+  }
+}

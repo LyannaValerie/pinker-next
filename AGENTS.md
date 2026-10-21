@@ -22,6 +22,18 @@ FORMAT
     JSONL = sequência de eventos e evidências
     prosa curta = contexto que os campos não explicam
 
+IMPLEMENTATION_LANGUAGES
+    Rust = estrutura e integração da Pinker
+    C = baixo nível e interfaces de máquina/ABI quando necessários
+    Python = ferramental e automação
+    papéis são preferências; combinações exigem problema concreto e contrato
+    sem bibliotecas/pacotes externos, inclusive desenvolvimento e testes
+    bibliotecas padrão e ferramentas do ambiente declaradas são permitidas
+    usar releases estáveis mantidas e patches atuais; registrar versões reais
+    C/unsafe/FFI exigem limites explícitos de memória, tipos e erros
+    política canônica = docs/linguagens.pot
+    referências de toolchain = toolchains.json e .python-version
+
 CONTINUE
     ler issue, último checkpoint e Git observado
     preservar modificações e arquivos não rastreados
@@ -45,4 +57,5 @@ DELIVER
 Uso executável: [docs/operacao.md](docs/operacao.md).
 Direção: [docs/reboot.pot](docs/reboot.pot).
 Estrutura de issues: [docs/issues.pot](docs/issues.pot).
+Linguagens e dependências: [docs/linguagens.pot](docs/linguagens.pot).
 POT/LPT aqui é uma convenção de contrato legível, não um interpretador instalado.

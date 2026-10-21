@@ -1,0 +1,97 @@
+IMPLEMENTATION_POLICY
+    AUTHORITY = Founder, conversa de 2026-10-20
+    LANGUAGES = Rust + C + Python
+    APPLIES_TO = compiler/runtime/tools/tests/build-support
+    CANONICAL_VERSION_REFERENCES = toolchains.json + .python-version
+
+PREFERRED_RESPONSIBILITIES
+    Rust = estrutura, frontend, representações, validação, integração e execução
+    C = baixo nível, ABI, interação com máquina/runtime quando trouxer benefício
+    Python = ferramentas, geração, análise de dados e automação
+    responsibilities = FLEXIBLE_NOT_EXCLUSIVE
+    choose language from concrete problem, evidence, boundary cost and maintenance
+    no duplicate implementation solely to occupy a language
+    no requirement to use all three in every feature
+    changing a component's language must preserve its accepted semantic contract
+
+COMPOSITION
+    Rust + C may combine through a documented C ABI
+    Python may orchestrate programs through explicit arguments and exit/result contracts
+    Python-generated sources must be deterministic and inspectable when generation is used
+    Python embedded in runtime is not assumed or required by this decision
+    C does not replace the assembler; emitted/inline assembly is target-specific
+    Bash launchers remain thin environment glue, not a fourth product implementation core
+
+DEPENDENCIES
+    third-party Rust crates = FORBIDDEN
+    third-party Python packages = FORBIDDEN
+    third-party C libraries = FORBIDDEN
+    development/test/build language packages = SAME_RULE
+    vendoring third-party code to evade this rule = FORBIDDEN
+    own repository modules and own workspace crates = ALLOWED
+    standard language libraries = ALLOWED
+    host compiler/interpreter/linker/assembler/Git/shell = DECLARED_ENVIRONMENT_TOOLS
+    OS APIs and platform standard C library = DECLARE_WHEN_USED
+    transitive implementation dependencies of the toolchain are not claimed absent
+    CI checkout/setup actions are infrastructure, not product language libraries
+    any additional environment tool must name purpose, version and execution context
+    no silent download or package installation by product build/test commands
+
+VERSIONS
+    use maintained stable releases, no beta/RC/nightly/development snapshot as baseline
+    prefer current corrective/security patches within accepted stable series
+    pin reference versions for reproducible validation
+    pinned != permanently exempt from security maintenance
+    before adoption/update, verify official release/support information and relevant advisories
+    upgrade references explicitly and validate affected consumers before claiming support
+    record actual rustc/cargo, compiler/linker, Python and target versions in native evidence
+    C standard version != C compiler version
+    C23 selected explicitly; GCC default dialect must not decide language semantics
+    compiler extensions/inline assembly require explicit target contract
+    maintained distribution backports must retain package/advisory provenance
+    version number alone does not prove absence of vulnerabilities
+
+REFERENCE_SELECTION
+    Rust = 1.99.1 stable corrective release
+    C = ISO C23 with GCC 16.2 corrective release as reference compiler
+    Python = CPython 3.14.8 maintenance/security release
+    Python 3.15.0 = newer stable observed, not rejected as unsafe
+    Python 3.14.8 choice = conservative maintained-series baseline, not a security ranking
+    official evidence = sources in toolchains.json
+    compiler/runtime reference execution = NOT_YET_VALIDATED
+    Python CI must select exact .python-version and report actual interpreter
+
+BOUNDARY_CONTRACT
+    each actual Rust/C interface must define:
+        public types, layout/alignment and calling convention
+        pointer validity, lengths, aliasing and nullability
+        allocation owner, lifetime and matching release function
+        error representation, callbacks and thread/reentrancy restrictions
+        panic/unwind behavior; no unwinding across an unprepared foreign boundary
+        target/architecture constraints and supported compiler options
+    each actual Python/process interface must define:
+        arguments, cwd/environment, input/output format and version
+        exit codes, timeout/interruption behavior and effects on retry
+    use fixed-width fields or explicitly target-sized fields where ABI requires them
+    validate lengths/ranges before unsafe access; no implicit cross-language ownership
+    unsafe code stays localized and explains the invariants its callers must meet
+    contract has one implementation authority; other languages consume it
+
+EVIDENCE
+    verify real callers and callees together for each imported interface
+    cover failure and boundary cases relevant to the obligation
+    sanitizers/compiler diagnostics when useful and supported are test tooling
+    observations from one target do not prove all architectures
+    not every test must traverse all languages
+    Trama remains code location only, without a dedicated test suite
+
+LIMIT
+    three languages expand implementation choices
+    three languages do not prove completeness, memory safety or absence of gaps
+    fewer gaps require explicit ownership, integration and observable behavior
+
+CURRENT_STATE
+    Python tooling = IMPLEMENTED
+    Rust compiler/core = NOT_IMPORTED
+    C components = NOT_IMPLEMENTED
+    foreign-function interfaces = NOT_IMPLEMENTED

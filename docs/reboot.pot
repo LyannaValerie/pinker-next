@@ -30,7 +30,9 @@ INITIAL_IMPLEMENTATION
     Trama = literal region locator, not full legacy implementation
     old Forja code = NOT_AVAILABLE / NOT_COPIED
     scripts implementation = Python stdlib + Bash launchers + Git
-    compiler implementation language = Rust direction preserved
+    implementation languages = Rust + C + Python, conforme docs/linguagens.pot
+    compiler structure = Rust direction preserved
+    C low-level components = NOT_IMPLEMENTED
 
 NEXT_LANGUAGE_STEP
     choose representative programs in the desired syntax

@@ -10,6 +10,21 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version-file: .python-version
+      - name: Conferir interpretador de referencia
+        run: |
+          python3 - <<'PY'
+          import json, platform
+          from pathlib import Path
+          expected = Path('.python-version').read_text().strip()
+          assert platform.python_version() == expected
+          assert platform.python_implementation() == 'CPython'
+          policy = json.loads(Path('toolchains.json').read_text())
+          assert policy['python']['version_file'] == '.python-version'
+          print('CPython', platform.python_version())
+          PY
       - name: Continuidade das tarefas em worktrees reais
         run: python3 -m unittest discover -s tests -v
       - name: Espacos e conflitos no diff
